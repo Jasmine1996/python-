@@ -19,7 +19,7 @@ print(msg)
 
 did_not = 'tom'
 people.remove(did_not)
-print(people, did_not ,"is did't come")
+print(people, did_not , "is did't come")
 did_replace = 'kali'
 people.append(did_replace)
 print(people)
@@ -38,3 +38,6 @@ while len(people) > 2:
     msg = f"sorry {popped_people.title()}, 不能邀请您共进晚餐了。"
     print(msg)
 print(people)
+print(f"hello {people[0].title()},您还在名单内")
+print(f"hello {people[1].title()},您还在名单内")
+
