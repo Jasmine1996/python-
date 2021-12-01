@@ -171,5 +171,9 @@ print(cars)
 cars = ['bmw', 'audi', 'toyota', 'subaru']
 len(cars)
 
-#4
-
+# 3.4 使用列表时避免索引错误
+length = ['1', '2']
+while len(length) >= 1:
+    tmp = length.pop()
+    print("length弹出", tmp)
+print(length)
