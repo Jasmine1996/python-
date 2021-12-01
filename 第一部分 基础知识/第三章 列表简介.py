@@ -120,5 +120,56 @@ motorcycles.remove(too_expensive)
 print(motorcycles)
 print(f"\nA {too_expensive.title()} is too expensive for me.")
 
+# 3.3组织列表
+# sort() 对列表永久排序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+cars.sort()
+print(cars)
 
+# ['audi', 'bmw', 'subaru', 'toyota']
+
+# reverse=True反转顺序
+cars.sort(reverse=True)
+print(cars)
+
+# ['toyota', 'subaru', 'bmw', 'audi']
+
+# sorted() 对列表临时排序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print("Here is the original list:")
+print(cars)
+
+print("\nHere is the sorted list:")
+print(sorted(cars))
+
+print("\n Here is the original list again:")
+print(cars)
+
+# Here is the original list:
+# ['bmw', 'audi', 'toyota', 'subaru']
+#
+# Here is the sorted list:
+# ['audi', 'bmw', 'subaru', 'toyota']
+#
+#  Here is the original list again:
+# ['bmw', 'audi', 'toyota', 'subaru']
+
+# 倒着打印列表
+"""
+要反转列表元素的排列顺序，可使用方法reverse() 。假设汽车列表是按购买时
+间排列的，可轻松地按相反的顺序排列其中的汽车："""
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars)
+
+cars.reverse()
+print(cars)
+
+# ['subaru', 'toyota', 'audi', 'bmw']
+
+# 3.3.4 确定列表的长度
+# len()
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+len(cars)
+
+#4
 
