@@ -1,11 +1,3 @@
-"""
-练习9-3：用户 　创建一个名为User 的类，其中包含属性first_name 和
-last_name ，以及用户简介通常会存储的其他几个属性。在类User 中定义一
-个名为describe_user() 的方法，用于打印用户信息摘要。再定义一个名为
-greet_user() 的方法，用于向用户发出个性化的问候。
-创建多个表示不同用户的实例，并对每个实例调用上述两个方法。
-"""
-
 class User:
     """一个表示用户的简单类"""
 
@@ -30,6 +22,4 @@ class User:
         """向用户发出个性化的问候。"""
         print(f"Hello {self.username}")
 
-user_1 = User("jasmine", "ming" ,"JASMINE","xxx@xx.com", "china")
-user_1.describe_user()
-user_1.greet_user()
+

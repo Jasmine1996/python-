@@ -10,3 +10,46 @@ login_attempts 的值重置为0。
 方法reset_login_attempts() ，并再次打印属性login_attempts 的
 值，确认它被重置为0。
 """
+
+class User:
+    """一个表示用户的简单类"""
+
+    def __init__(self, first_name, last_name, username, email, location, login_attempts):
+        """初始化用户"""
+        self.first_name = first_name.title()
+        self.last_name = last_name.title()
+        self.username = username
+        self.email = email
+        self.location = location.title()
+        self.login_attempts = int(login_attempts)
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+    def describe_user(self):
+        """显示用户的摘要信息"""
+        print(f"{self.first_name} {self.last_name}")
+        print(f"  Username:{self.username}")
+        print(f"  Email:{self.email}")
+        print(f"  Location:{self.location}")
+
+
+    def greet_user(self):
+        """向用户发出个性化的问候。"""
+        print(f"Hello {self.username}")
+
+user_1 = User("jasmine", "ming", "JASMINE","xxx@xx.com","china","2")
+print(user_1.login_attempts)
+
+user_1.increment_login_attempts()
+print(user_1.login_attempts)
+
+user_1.increment_login_attempts()
+user_1.increment_login_attempts()
+print(user_1.login_attempts)
+
+user_1.reset_login_attempts()
+print(user_1.login_attempts)

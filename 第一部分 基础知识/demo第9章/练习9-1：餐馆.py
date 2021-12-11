@@ -11,7 +11,7 @@ class Restaurant:
     """一个表示餐馆的类"""
     def __init__(self,restaurant_name, cuisine_type):
         """初始化餐馆。"""
-        self.restaurant_name = restaurant_name
+        self.restaurant_name = restaurant_name.title()
         self.cuisine_type = cuisine_type
 
     def describe_restaurant(self):
@@ -24,6 +24,9 @@ class Restaurant:
         msg = f"{self.restaurant_name} is open. Come on in !"
         print(f"\n{msg}")
 
-restaurant = Restaurant("The mean queen", 'pizza')
+restaurant = Restaurant("the mean queen", 'pizza')
 print(restaurant.restaurant_name)
 print(restaurant.cuisine_type)
+
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
