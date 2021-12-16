@@ -6,3 +6,22 @@
 次：第一次打印时读取整个文件；第二次打印时遍历文件对象；第三次打印时
 将各行存储在一个列表中，再在with 代码块外打印它们。
 """
+
+print("---Reading in entire file:")
+filename = './learning_python.txt'
+with open(filename, 'r') as f:
+    contents = f.read()
+
+print(contents)
+
+print("\n--- Looping over the lines:")
+with open(filename, 'r') as f:
+    for line in f:
+        print(line)
+
+print("\n Storing the lines in a list:")
+with open(filename) as f:
+    # lines = f.readlines()
+    lines = f.read()
+for line in lines:
+    print(line.rstrip())
