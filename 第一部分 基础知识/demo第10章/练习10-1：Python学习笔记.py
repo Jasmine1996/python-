@@ -21,7 +21,11 @@ with open(filename, 'r') as f:
 
 print("\n Storing the lines in a list:")
 with open(filename) as f:
-    # lines = f.readlines()
-    lines = f.read()
+    lines = f.readlines()
+    # lines = f.read()
 for line in lines:
     print(line.rstrip())
+
+
+
+

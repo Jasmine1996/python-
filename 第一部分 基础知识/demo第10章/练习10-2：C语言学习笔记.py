@@ -9,3 +9,15 @@
 读取你刚创建的文件learning_python.txt中的每一行，将其中的Python都替换
 为另一门语言的名称，比如C。将修改后的各行都打印到屏幕上。
 """
+filename = './learning_python.txt'
+with open(filename, 'r') as f:
+    for line in f:
+        newline = line.replace('Python', 'C')
+        # print(line)
+        print(newline.rstrip())
+
+with open(filename, 'r') as f:
+    lines = f.readlines()
+
+for line in lines:
+    print(line.rstrip())

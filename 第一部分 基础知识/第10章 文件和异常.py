@@ -251,7 +251,7 @@ try:
         username = json.load(f)
 except FileNotFoundError:
     username = input("what is your name? ")
-    with open(filename,'w') as f:
+    with open(filename, 'w') as f:
         json.dump(username,f)
         print(f"we'll remember you when you come back,{username}!")
 
