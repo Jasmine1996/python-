@@ -15,7 +15,7 @@ print(contents.lstrip())
 # 10.1.2 文件路径
 
 # 10.1.3 逐行读取
-# file_reader.y
+# file_reader.py
 filename = './dir_demo/pi_digits.txt'
 with open(filename) as file_object:
     for line in file_object:

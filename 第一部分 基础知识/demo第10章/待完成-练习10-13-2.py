@@ -23,11 +23,11 @@ def get_new_username():
         json.dump(username, f_obj)
     return username
 
-def check_user():
-    username = get_stored_username()
-    if username:
-        correct = input(f"Are you {username}?(y/n) ")
-        if correct == 'y':
+# def check_user():
+#     username = get_stored_username()
+#     if username:
+#         correct = input(f"Are you {username}?(y/n) ")
+#         if correct == 'y':
 
 def greet_user():
     """基于用户名问候用户。"""
