@@ -8,8 +8,10 @@ class AlienInvasion:
         """初始化游戏并创建游戏资源"""
         pygame.init()
 
-        self.screen = pygame.display.set_mode((1920, 1080))
+        self.screen = pygame.display.set_mode((1200, 800))
         pygame.display.set_caption("Alien Invasion")
+        # 设置背景色
+        self.bg_color = (230, 230, 230)
 
     def run_game(self):
         """开始游戏的主循环"""
@@ -19,6 +21,9 @@ class AlienInvasion:
                 if event.type == pygame.QUIT:
                     sys.exit()
 
+            # 每次循环时都重绘屏幕。
+            self.screen.fill(self.bg_color)
+            
             # 让最近绘制的屏幕可见。
             pygame.display.flip()
 
