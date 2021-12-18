@@ -53,3 +53,6 @@ $ python3 -m pip install --user pygame
 12.3.1 创建Pygame窗口及响应用户输入
 下面创建一个表示游戏的类，以创建空的Pygame窗口。为此，在文本编辑器中新建
 一个文件，将其保存为alien_invasion.py，再在其中输入如下代码：
+
+
+进度： 12.6 驾驶飞船！！！！
