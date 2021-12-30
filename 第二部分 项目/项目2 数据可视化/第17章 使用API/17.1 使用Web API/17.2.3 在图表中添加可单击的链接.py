@@ -12,8 +12,13 @@ print(f"Status Code: {r.status_code}")
 response_dict = r.json()
 repo_dicts = response_dict['items']
 repo_names, stars, labels = [], [], []
+repo_links, stars, labels = [], [], []
 for repo_dict in repo_dicts:
     repo_names.append(repo_dict['name'])
+    repo_name = repo_dict['name']
+    repo_url = repo_dict['html_url']
+    repo_link = f"<a href='{repo_url}'>{repo_name}</a>"
+    repo_links.append(repo_link)
     stars.append(repo_dict['stargazers_count'])
     # print(repo_names.append(repo_dict['name']), stars.append(repo_dict['stargazers_count']))
 
@@ -24,7 +29,7 @@ for repo_dict in repo_dicts:
 # 可视化
 data = [{
     'type': 'bar',
-    'x': repo_names,
+    'x': repo_links,
     'y': stars,
     # 将鼠标指向条形时，将显示项目的描述和所有者
     'hovertext': labels,

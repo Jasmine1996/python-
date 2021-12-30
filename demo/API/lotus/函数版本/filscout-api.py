@@ -128,8 +128,8 @@ name = "客户名称"
 # 飞驰浏览器的api字段用中文替代，方便后续更改
 # 有效算力 = 'qualityPowerStr'
 有效算力 = 'qualityPower'
-周算力增长量 = 'qualityPowerGrowth'
-算力增长速度 = 'qualityPowerGrowth'
+周算力增长量 = 'provingPower'
+算力增长速度 = 'provingPower'
 客户要求算力增速 = ''
 扇区大小 = 'sectorSizeStr'
 当前扇区总数 = 'sectorCount'
@@ -162,23 +162,23 @@ for miner_id in dict_miner_xlsx.index:
         else:
             客户要求算力增速 = "增速无要求"
         print(f"{dict_miner_xlsx.loc[miner_id][location]}\t{miner_id}\t{dict_miner_xlsx.loc[miner_id][power_target]}\t"
-              f"{dict_miner_info[有效算力]/(1024**4)}\t{dict_block_output_7d[周算力增长量]/(1024**4)}\t{dict_block_output_24h[算力增长速度]/(1024**4)}\t"
+              f"{dict_miner_info[有效算力]/(1024**4):8.2f}\t{dict_block_output_7d[周算力增长量]/(1024**4):8.2f}\t{dict_block_output_24h[算力增长速度]/(1024**4):8.2f}\t"
               f"{客户要求算力增速}\t{dict_miner_info[扇区大小]}\t{dict_miner_info[当前扇区总数]}\t"
               f"{dict_block_output_24h[_24h幸运值]:8.2%}\t{dict_block_output_7d[_7d幸运值]:8.2%}\t{dict_block_output_30d[_30d幸运值]:8.2%}\t"
               f"{dict_block_output_7d[周爆块数]}\t{dict_block_output_7d[周收益].split()[0]}\t{dict_block_output_24h[日爆块数]}\t"
-              f"{dict_block_output_24h[日收益].split()[0]}\n")
+              f"{dict_block_output_24h[日收益].split()[0]}")
         dict_data['机房'] = dict_miner_xlsx.loc[miner_id][location]
         dict_data['节点号'] = miner_id
         dict_data['目标算力'] = dict_miner_xlsx.loc[miner_id][power_target]
-        dict_data['有效算力(TiB)'] = dict_miner_info[有效算力]/(1024**4)
-        dict_data['周算力增长量(TiB)'] = dict_block_output_7d[周算力增长量]/(1024**4)
-        dict_data['算力增长速度(TiB/day)'] = dict_block_output_24h[算力增长速度]/(1024**4)
+        dict_data['有效算力(TiB)'] = f"{dict_miner_info[有效算力]/(1024**4):8.2f}"
+        dict_data['周算力增长量(TiB)'] = f"{dict_block_output_7d[周算力增长量]/(1024**4):8.2f}"
+        dict_data['算力增长速度(TiB/day)'] = f"{dict_block_output_24h[算力增长速度]/(1024**4):8.2f}"
         dict_data['客户要求算力增速'] = 客户要求算力增速
         dict_data['扇区大小'] = dict_miner_info[扇区大小]
         dict_data['当前扇区总数(个)'] = dict_miner_info[当前扇区总数]
-        dict_data['24h幸运值(%)'] = f"{dict_block_output_24h[_24h幸运值]:8.2%}"
-        dict_data['周幸运值(%)'] = f"{dict_block_output_7d[_7d幸运值]:8.2%}"
-        dict_data['30d幸运值(%)'] = f"{dict_block_output_30d[_30d幸运值]:8.2%}"
+        dict_data['24h幸运值(%)'] = f"{dict_block_output_24h[_24h幸运值]:8.2%}".split("%")[0]
+        dict_data['周幸运值(%)'] = f"{dict_block_output_7d[_7d幸运值]:8.2%}".split("%")[0]
+        dict_data['30d幸运值(%)'] = f"{dict_block_output_30d[_30d幸运值]:8.2%}".split("%")[0]
         dict_data['周爆块数'] = dict_block_output_7d[周爆块数]
         dict_data['周收益(Fil)'] = dict_block_output_7d[周收益].split()[0]
         dict_data['日爆块数'] = dict_block_output_24h[日爆块数]
@@ -188,7 +188,7 @@ for miner_id in dict_miner_xlsx.index:
         list_data.append(dict_data.copy())
 
     except TypeError:
-        # print(f"{miner_id} 是还未启动的节点，只能查询到miner信息，产出统计的data字段为空")
+        print(f"{miner_id} 是还未启动的节点，只能查询到miner信息，产出统计的data字段为空")
         # print(dict_miner_xlsx, dict_miner_info, dict_block_output_24h, dict_block_output_7d, dict_block_output_30d)
         pass
 
